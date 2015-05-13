@@ -18,3 +18,11 @@ Estagio <PFILE>		// Permite que o arquivo de paramentros alternativo seje usuari
 
 desc XXX		// describre (descrição da tabela qualquer) 
 show user		// Mostra o usuario logado
+
+Tipos de Startup:
+FORCE			// Força a inicialização
+RESTRICT		// Somente usuarios com permissão RESTRICT SESSION
+RECOVER			// 
+
+ALTER DATABASE	estagio;// Altera o estagio do start
+
