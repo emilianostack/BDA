@@ -26,3 +26,5 @@ RECOVER			//
 
 ALTER DATABASE	estagio;// Altera o estagio do start
 
+senha do root da VM: root123
+
