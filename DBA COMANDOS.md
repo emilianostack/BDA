@@ -64,3 +64,27 @@ alter database open read only;	// Libera somente para leitura
 
 login scott senha tiger
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CREATE DATABASE			// CRIAR DATABASE
+
+VARIAVEIS DE AMBIENTE PARA CONFIGURAR:
+ORACLE_BASE
+ORACLE_HOME
+ORACLE_SID
+ORA_NLS33
+PATH
+LD_LIBRARY_PATH
+
+
+ARCHIVELOG		// Faz auditoria dos dados, faz log das alterações
+DICIONARIO CATALOG.SQL 	// uTILIZADO PELO PROPRIO BANCO
+PLSQL			// EXLCUSIVO ORACLE
+
+3 VISÕES DO DICIONARIO DE DADOS:
+DBA_XXX			// TODOS OS OBJETOS DO BANCO DE DADOS
+ALL_xXX			// OBJETOS ACESSIVEIS PELO USUARIO ATUAL
+USER_XXX		// OBJETOS DE PROPRIEDADE DO USUARIO ATUAL
+
+
