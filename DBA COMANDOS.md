@@ -87,4 +87,23 @@ DBA_XXX			// TODOS OS OBJETOS DO BANCO DE DADOS
 ALL_xXX			// OBJETOS ACESSIVEIS PELO USUARIO ATUAL
 USER_XXX		// OBJETOS DE PROPRIEDADE DO USUARIO ATUAL
 
+////////////////////////////////////////////////////////////////////////////////
+create user aaron
+identified by soccer
+default tablespace data
+temporary tablespace temp
+quota 15M on data
+quota 10M ON users
+password expire;
+
+
+select tablespace_name from dba_tablespaces;
+
+
+alter user aaron
+quota 1M on data01;
+
+drop user aaron; mata o usuario
+
+drop user aaron cascade; mata o usuario e as tabelas
 
