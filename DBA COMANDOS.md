@@ -185,3 +185,18 @@ select username, to_char(timestamp, 'DD/MM/YYYY HH21:MI:SS') timestamp,
 obj_name, action_name
 from dba_audit_trail
 where obj_name = 'EMP';
+
+
+
+audit statment [, statment] ..
+on { [schema] object|default}
+[by {session|access}]
+[whenever [not] successful]
+
+onde:
+ statement: instrução sql
+ schema_object: objeto escolhido
+ default: define opções do objeto especifico como default para objetos posteriores
+ by session: um registro onserido a cada sessão
+ access: um registro toda vez que a instrução é executada
+ whanever: auditoria deve ser executada somente na instrução ou onde com sucesso
