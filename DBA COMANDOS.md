@@ -177,3 +177,11 @@ SO = auditoria ativa e direciona os registro para um log do SO
 
 
 alter system set audit_trail = "DB" scope = spfile;	// ativa a auditoria
+
+
+alter system set audit_trail = "DB" scope = spfile;	// ativa a auditoria
+
+select username, to_char(timestamp, 'DD/MM/YYYY HH21:MI:SS') timestamp, 
+obj_name, action_name
+from dba_audit_trail
+where obj_name = 'EMP';
