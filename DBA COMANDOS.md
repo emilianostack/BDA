@@ -107,3 +107,39 @@ drop user aaron; mata o usuario
 
 drop user aaron cascade; mata o usuario e as tabelas
 
+
+create user Bob
+identified by ALONG
+default tablespace DATA01
+temporary tablespace temp
+quota 100M on DATA01
+quota 100M on INDX01;
+
+create user Kay
+identified by MARY
+default tablespace DATA01
+temporary tablespace temp
+quota 100M on DATA01
+quota 100M on INDX01;
+
+REVOKE CREATE TABLE FROM Kay;
+
+select tablespace_name from dba_users;
+
+
+SELECT username FROM dba_users WHERE username = 'Bob' or username = 'Kay';
+
+SELECT username FROM dba_ts_qutoas WHERE username = 'Bob';
+
+ALTER USER Bob
+QUOTA 0 ON DATA01;
+
+DROP USER Kay CASCADE;
+
+ALTER USER Bob
+IDENTIFIED BY SAM;
+
+
+ALTER USER Bob
+IDENTIFIED BY OLINK
+PASSWORD EXPIRE;
