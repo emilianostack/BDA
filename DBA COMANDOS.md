@@ -161,3 +161,19 @@ ALTER DATABASE ARCHIVELOG
 RESTRICTED SESSION
 
 REVOKE CREATE TABLE FROM emi;
+
+
+
+audit table; 	// para tabela
+audit create any trigger;	 //por privilegio
+audit select on emi.orders;		//objeto
+
+
+parametro aduit_trail
+
+none= auditoria desativada
+DB = auditoria ativa e direciona todos os registros para a trilha do bd
+SO = auditoria ativa e direciona os registro para um log do SO
+
+
+alter system set audit_trail = "DB" scope = spfile;	// ativa a auditoria
