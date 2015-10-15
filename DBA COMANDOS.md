@@ -181,6 +181,9 @@ alter system set audit_trail = "DB" scope = spfile;	// ativa a auditoria
 
 alter system set audit_trail = "DB" scope = spfile;	// ativa a auditoria
 
+audit select on scott.emp by access whenerver successful;  toda vez q alguem fizer select gera log
+
+
 select username, to_char(timestamp, 'DD/MM/YYYY HH21:MI:SS') timestamp, 
 obj_name, action_name
 from dba_audit_trail
@@ -200,3 +203,20 @@ onde:
  by session: um registro onserido a cada sessão
  access: um registro toda vez que a instrução é executada
  whanever: auditoria deve ser executada somente na instrução ou onde com sucesso
+ 
+ 
+ noaudit select on scott.emp;
+ 
+ 
+
+1-Execute auditoria na tabela dept para insert de registro
+Dica: Ative a auditoria e exercute o comado de inserção
+R: audit insert on scott.dept whenever successful;
+
+
+2-Execute auditoria na tabela emp para delete faça atualização e veja as auditorias
+R: audit delete on scott.dept whenever successful;
+
+
+3-Execute auditoria na tabela sal para inserção, update e delete
+R: audit update,delete,insert on scott.salgrade whenever successful;
