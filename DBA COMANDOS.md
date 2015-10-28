@@ -220,3 +220,21 @@ R: audit delete on scott.dept whenever successful;
 
 3-Execute auditoria na tabela sal para inserção, update e delete
 R: audit update,delete,insert on scott.salgrade whenever successful;
+
+
+
+
+connect system/manager as sysdba
+
+shutdown 
+
+rman target /dados/oracle
+rman target /
+
+startup
+
+run {
+allocate channet t1 type disk format '/home/oracle/BKP_CF_28102015.rman';
+backup current controlfile tag BKP_CF;
+release channet t1;
+}
