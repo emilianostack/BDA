@@ -238,3 +238,17 @@ allocate channet t1 type disk format '/home/oracle/BKP_CF_28102015.rman';
 backup current controlfile tag BKP_CF;
 release channet t1;
 }
+
+cd $ORACLE_DATA
+
+mv control.dbf control.db2
+
+rman target /
+
+startup nomount;
+
+restore controlfile from '/home/oracle/BKP_CF_28102015.rman';
+
+
+
+
