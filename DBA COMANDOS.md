@@ -251,4 +251,10 @@ restore controlfile from '/home/oracle/BKP_CF_28102015.rman';
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
+explain plan for
+select * from scott.emp
+where job like 'M%'
+
+select * from table(DBMS_XPLAN.DISPLAY);
