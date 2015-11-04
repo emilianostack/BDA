@@ -258,3 +258,11 @@ select * from scott.emp
 where job like 'M%'
 
 select * from table(DBMS_XPLAN.DISPLAY);
+
+
+set autotrace on;
+
+select ename, dname, sal, loc
+from scott.emp, scott.dept;
+
+set autotrace off;
