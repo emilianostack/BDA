@@ -266,3 +266,8 @@ select ename, dname, sal, loc
 from scott.emp, scott.dept;
 
 set autotrace off;
+
+
+select ename, dname, sal, loc
+from scott.emp e, scott.dept d
+where e.deptno = d.deptno;
